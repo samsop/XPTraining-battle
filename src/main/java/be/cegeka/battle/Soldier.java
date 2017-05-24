@@ -8,6 +8,8 @@ public class Soldier {
 
     private String name;
 
+    private int id;
+
     private Weapon weapon;
 
 
@@ -29,4 +31,11 @@ public class Soldier {
         this.weapon = weapon;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

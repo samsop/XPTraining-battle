@@ -5,9 +5,13 @@ import java.util.List;
 
 public class Army {
 
+    private int id;
+
     private Soldier frontMan;
 
     private List<Soldier> soldiers = new ArrayList<Soldier>();
+
+    private IHeadquarters headquarters;
 
     public Army() {
 
@@ -18,6 +22,7 @@ public class Army {
         if (soldier == soldiers.get(0)) {
             this.frontMan = soldier;
         }
+        soldier.setId(headquarters.ReportElistment(soldier.getName()));
     }
 
     public List<Soldier> getSoldiers() {
@@ -36,27 +41,5 @@ public class Army {
         soldiers.remove(soldier);
     }
 
-    public Army fight(Army enemy) {
-        while (!this.getSoldiers().isEmpty() && !enemy.getSoldiers().isEmpty()) {
-            Fight fight = new Fight(this.getFrontMan(), enemy.getFrontMan());
-            if (enemy.getFrontMan() == fight.getLoser()) {
-                enemy.removeDeadSoldier(fight.getLoser());
-                if (!enemy.getSoldiers().isEmpty()) {
-                    enemy.setNieuweFrontman(enemy.getSoldiers().get(0));
-                }
-            }
-            this.removeDeadSoldier(fight.getLoser());
-            if (!this.getSoldiers().isEmpty()) {
-                this.setNieuweFrontman(this.getSoldiers().get(0));
-            }
-
-        }
-        if (this.getSoldiers().isEmpty()) {
-            return enemy;
-        } else {
-            return this;
-        }
-
-    }
 
 }
