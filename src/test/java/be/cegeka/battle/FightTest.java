@@ -1,6 +1,7 @@
 package be.cegeka.battle;
 
-public class Fight {
+
+public class FightTest {
 
 
 }

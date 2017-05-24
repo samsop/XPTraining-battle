@@ -28,4 +28,19 @@ public class Soldier {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
+
+    private void compareSoldier(Soldier soldier, Soldier soldier2) {
+        if (soldier == soldier2) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public Soldier fight(Soldier defender) {
+        compareSoldier(this, defender);
+        if (this.getWeapon().getDamage() >= defender.getWeapon().getDamage()) {
+            return this;
+        }
+        return defender;
+    }
+
 }
