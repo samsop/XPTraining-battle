@@ -6,7 +6,7 @@ public class Weapon {
     public Weapon() {
     }
 
-    private int damage;
+    protected int damage;
 
     public int getDamage() {
         return damage;
@@ -14,6 +14,10 @@ public class Weapon {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public void calculateDamage(Weapon weapon) {
+
     }
 
 
