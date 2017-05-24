@@ -65,30 +65,4 @@ public class SoldierTest {
         assertEquals(soldier.getWeapon().getDamage(), 2);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testFightOnesSelf() {
-        Soldier soldier = new Soldier("name");
-        soldier.fight(soldier);
-    }
-
-    @Test
-    public void testSwordVsBareHand() {
-        Soldier soldier = new Soldier("name");
-        Soldier soldier2 = new Soldier("naam2");
-        Weapon weapon = new Sword();
-        soldier2.setWeapon(weapon);
-        assertEquals(soldier.fight(soldier2), soldier2);
-    }
-
-    @Test
-    public void testSwordVsSword() {
-        Soldier soldier = new Soldier("name");
-        Soldier soldier2 = new Soldier("naam2");
-        Weapon weapon = new Sword();
-        soldier.setWeapon(weapon);
-        soldier2.setWeapon(weapon);
-        assertEquals(soldier.fight(soldier2), soldier);
-    }
-
-
 }
