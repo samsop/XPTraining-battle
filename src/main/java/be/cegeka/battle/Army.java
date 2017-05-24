@@ -22,7 +22,6 @@ public class Army {
         if (soldier == soldiers.get(0)) {
             this.frontMan = soldier;
         }
-        soldier.setId(headquarters.ReportElistment(soldier.getName()));
     }
 
     public List<Soldier> getSoldiers() {

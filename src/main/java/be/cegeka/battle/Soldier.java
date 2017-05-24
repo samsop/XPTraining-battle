@@ -20,7 +20,7 @@ public class Soldier {
     }
 
     String getName() {
-        return this.name;
+        return name;
     }
 
     public Weapon getWeapon() {

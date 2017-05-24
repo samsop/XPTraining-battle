@@ -31,14 +31,12 @@ public class War {
         Fight fight = new Fight(army1.getFrontMan(), army2.getFrontMan());
         if (army2.getFrontMan() == fight.getLoser()) {
             army2.removeDeadSoldier(fight.getLoser());
-            headquarters.ReportCasualty(fight.getLoser().getId());
             if (!army2.getSoldiers().isEmpty()) {
                 army2.setNieuweFrontman(army2.getSoldiers().get(0));
             }
         }
         army1.removeDeadSoldier(fight.getLoser());
         if (!army1.getSoldiers().isEmpty()) {
-            headquarters.ReportCasualty(fight.getLoser().getId());
             army1.setNieuweFrontman(army1.getSoldiers().get(0));
         }
     }
