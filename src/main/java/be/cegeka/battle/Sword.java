@@ -11,7 +11,7 @@ public class Sword extends Weapon {
     public void calculateDamage(Weapon weapon) {
         Axe axe = new Axe();
         if (weapon == axe) {
-            damage += 3;
+            damage = 5;
         }
     }
 }

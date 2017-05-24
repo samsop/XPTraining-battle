@@ -11,7 +11,7 @@ public class Axe extends Weapon {
     public void calculateDamage(Weapon weapon) {
         Spear spear = new Spear();
         if (weapon == spear) {
-            damage += 3;
+            damage = 6;
         }
     }
 

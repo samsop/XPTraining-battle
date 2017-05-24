@@ -20,18 +20,4 @@ public class WeaponTest {
         assertEquals(fight.getWinner(), soldier1);
     }
 
-    @Test
-    public void swordWinsOverAxe() {
-        Sword sword = new Sword();
-        Axe axe = new Axe();
-        Soldier soldier1 = new Soldier("naam");
-        Soldier soldier2 = new Soldier("naam");
-
-        soldier1.setWeapon(sword);
-        soldier2.setWeapon(axe);
-
-        Fight fight = new Fight(soldier1, soldier2);
-
-        assertEquals(fight.getWinner(), soldier1);
-    }
 }
