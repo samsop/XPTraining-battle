@@ -8,4 +8,5 @@ public class Trident extends Weapon {
     public Trident() {
         super.setDamage(spear.getDamage() * 3);
     }
+
 }

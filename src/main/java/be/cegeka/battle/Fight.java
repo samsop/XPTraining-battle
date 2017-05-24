@@ -20,10 +20,16 @@ public class Fight {
 
     public Soldier getWinner() {
         compareSoldier(attacker, defender);
-        if (attacker.getWeapon().getDamage() >= defender.getWeapon().getDamage()) {
+        if (attackerWins()) {
             return attacker;
         }
         return defender;
+    }
+
+    public boolean attackerWins() {
+        attacker.getWeapon().calculateDamage(defender.getWeapon());
+        defender.getWeapon().calculateDamage(attacker.getWeapon());
+        return attacker.getWeapon().getDamage() >= defender.getWeapon().getDamage();
     }
 
     public Soldier getLoser() {

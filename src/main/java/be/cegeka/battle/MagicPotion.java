@@ -5,7 +5,6 @@ public class MagicPotion extends Weapon {
 
     public MagicPotion() {
 
-
     }
 
     @Override
