@@ -29,4 +29,6 @@ public class ArmyTest {
         army.addSoldier(soldier2);
         assertEquals(army.getFrontMan(), soldier2);
     }
+
+
 }

@@ -27,4 +27,36 @@ public class Army {
     public Soldier getFrontMan() {
         return this.soldiers.get(0);
     }
+
+    public void setNieuweFrontman(Soldier soldier) {
+        this.frontMan = soldier;
+    }
+
+    public void removeDeadSoldier(Soldier soldier) {
+        soldiers.remove(soldier);
+    }
+
+    public Army fight(Army enemy) {
+        while (!this.getSoldiers().isEmpty() && !enemy.getSoldiers().isEmpty()) {
+            Fight fight = new Fight(this.getFrontMan(), enemy.getFrontMan());
+            if (enemy.getFrontMan() == fight.getLoser()) {
+                enemy.removeDeadSoldier(fight.getLoser());
+                if (!enemy.getSoldiers().isEmpty()) {
+                    enemy.setNieuweFrontman(enemy.getSoldiers().get(0));
+                }
+            }
+            this.removeDeadSoldier(fight.getLoser());
+            if (!this.getSoldiers().isEmpty()) {
+                this.setNieuweFrontman(this.getSoldiers().get(0));
+            }
+
+        }
+        if (this.getSoldiers().isEmpty()) {
+            return enemy;
+        } else {
+            return this;
+        }
+
+    }
+
 }
